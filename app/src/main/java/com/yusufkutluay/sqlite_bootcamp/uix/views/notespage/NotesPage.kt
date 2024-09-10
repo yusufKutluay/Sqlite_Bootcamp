@@ -200,13 +200,14 @@ class NotesPage(var notesPageViewModel: NotesPageViewModel) : Screen{
                             unfocusedIndicatorColor = Color.Transparent, // sabitken alt çizgi rengi
                             focusedContainerColor = Color.Transparent, // odaklandığında arka plan rengi
                             focusedIndicatorColor = Color.Transparent // odaklandığında alt çzigi rengi
-                        )
+                        ),
+                        modifier = Modifier.weight(70f)
                     )
 
                     Checkbox(
                         checked = todoOk.value.toBoolean(),
                         onCheckedChange = {todoOk.value = it.toString()},
-
+                        modifier = Modifier.weight(10f)
                     )
 
 
@@ -221,7 +222,7 @@ class NotesPage(var notesPageViewModel: NotesPageViewModel) : Screen{
                         Icon(
                             painter = painterResource(id = R.drawable.check),
                             contentDescription = "",
-                            modifier = Modifier.size(35.dp,35.dp),
+                            modifier = Modifier.size(35.dp,35.dp).weight(10f),
                             tint = Color(textColor.value.toColorInt())
                         )
                     }
@@ -230,7 +231,7 @@ class NotesPage(var notesPageViewModel: NotesPageViewModel) : Screen{
                      * BottomSheet Kullanımı DropDown
                      * Menü ile notları temizleme ve arka plan rengi gibi işlemler yer alır...
                      */
-                    Box(modifier = Modifier.size(50.dp)){
+                    Box(modifier = Modifier.size(50.dp).weight(10f)){
                         Box(modifier = Modifier
                             .fillMaxSize()
                             .padding(end = 5.dp)){
